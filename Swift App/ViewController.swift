@@ -9,41 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var theLabel: UILabel!
     
-    var tapCount = 0
+    @IBOutlet weak var text1: UITextField!
     
+    @IBOutlet weak var text2: UITextField!
     
     
     @IBAction func buttontapped(_ sender: Any) {
-        tapCount = tapCount + 1
         
-        if tapCount >= 10 {
-                theLabel.text = "Enough my G"
+        let addition = true
+        
+        if addition {
+            theLabel.text = String( Double(text1.text!)! + Double(text2.text!)!)
+        }else {
+            theLabel.text = String( Double(text1.text!)! - Double(text2.text!)!)
+            
         }
+        
     }
-    @IBAction func buttonpressed(_ sender: Any) {
-        theLabel.text = "wow you really pressed me"
-
-        
-        }
-
-        
-        
+    
     
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
